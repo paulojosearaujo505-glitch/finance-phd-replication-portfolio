@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.DS_Store
+.env
+
+# Large Data Files (Never upload these to GitHub)
+*.csv
+*.dta
+*.parquet
+*.xlsx
+
+# Outputs
+*.png
+*.pdf
