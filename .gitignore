@@ -9,7 +9,3 @@ __pycache__/
 *.dta
 *.parquet
 *.xlsx
-
-# Outputs
-*.png
-*.pdf
