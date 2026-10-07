@@ -1,4 +1,4 @@
-# Finance PhD Replication Portfolio
+# Finance Replication Portfolio
 
 **Author:** Paulo Jose Araujo
 
