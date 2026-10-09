@@ -9,3 +9,6 @@ __pycache__/
 *.dta
 *.parquet
 *.xlsx
+
+# Allow output CSVs to be tracked
+!01_fama_french_1993/output/*.csv
