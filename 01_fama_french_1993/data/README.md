@@ -21,3 +21,12 @@ This project replicates the foundational asset pricing models of Fama & French (
 2. Run `python 01_fama_french_1993/code/macro_data_pipeline.py` to fetch the raw data.
 3. Run `python 01_fama_french_1993/code/01_data_cleaning.py` to generate the cleaned dataset.
 4. Run `python 01_fama_french_1993/code/02_data_visualization.py` to generate the dashboard.
+
+# Data Directory
+
+This directory is intentionally left empty of CSV files due to GitHub's file size limits and best practices for reproducible research.
+
+To generate the data for this project, run the following script from the repository root:
+`python 01_fama_french_1993/code/03_fetch_ff_data.py`
+
+This script will automatically download and clean the Fama-French 3-Factor and 25 Size/Book-to-Market portfolio data from Kenneth French's Dartmouth Library.
