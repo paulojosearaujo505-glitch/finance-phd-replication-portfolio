@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\onehalfspacing
+
+\title{\textbf{Replicating and Extending Fama \& French (1993):\\Evidence from 60 Years of U.S. Equity Returns}}
+\author{Paulo Jose Araujo \\ University of Macau}
+\date{October 2025}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent This paper replicates and extends the seminal Fama \& French (1993) three-factor asset pricing model using U.S. equity data from July 1963 through December 2025. Using the 25 Size/Book-to-Market portfolios and the market, size (SMB), and value (HML) factors, I first reproduce the original findings for the 1963--1991 sample period. Consistent with the original paper, I find that the CAPM produces significant positive alphas for small-cap portfolios, and that adding SMB and HML eliminates these alphas. I then extend the sample to 1992--2025 and find that the model's performance deteriorates: significant alphas reappear, and the average factor loadings decline. A structural break test confirms that the SMB and HML loadings have statistically changed after 1991. These results suggest that while the Fama-French factors remain relevant, the size and value premiums have weakened substantially in the modern era.
+\end{abstract}
+
+\section{Introduction}
+The Capital Asset Pricing Model (CAPM) of Sharpe (1964) and Lintner (1965) posits that market risk is the sole determinant of expected returns. However, a large body of empirical evidence has documented anomalies---such as the size effect and the value effect---that the CAPM cannot explain. Fama \& French (1993) addressed this by introducing a three-factor model that augments the market factor with a size factor (SMB) and a value factor (HML).
+
+More than three decades have passed since the publication of that paper. This raises a critical question: \textbf{Do the Fama-French factors still work in the modern era?} This paper addresses this question by replicating the original analysis and extending the sample to December 2025.
+
+\section{Data and Methodology}
+I use the Fama-French 3-Factor data and the 25 Size/Book-to-Market portfolio returns from Kenneth French's Dartmouth data library. For each of the 25 portfolios, I estimate the following time-series regression:
+\begin{equation}
+R_{i,t} - R_{f,t} = \alpha_i + \beta_1(Mkt\text{-}RF)_t + \beta_2(SMB)_t + \beta_3(HML)_t + \epsilon_{i,t}
+\end{equation}
+
+\section{Results}
+\subsection{Replication of the Original Sample (1963--1991)}
+Consistent with Fama \& French (1993), small-cap portfolios exhibit higher average returns and higher volatility than large-cap portfolios. The CAPM produces significant positive alphas for small-cap portfolios (e.g., SMALL HiBM: $\alpha = 0.0054$, $t = 2.64$). When SMB and HML are added, these alphas shrink dramatically (SMALL HiBM: $\alpha = 0.0006$, $t = 0.88$).
+
+\subsection{Out-of-Sample Extension (1992--2025)}
+I re-run the 3-factor model on the post-publication period. Significant alphas reappear for several portfolios (e.g., SMALL LoBM: $\alpha = -0.0058$, $t = -4.04$). The model's ability to explain returns has clearly deteriorated.
+
+\subsection{Structural Break Analysis}
+The interaction terms in the structural break test are highly significant (Dummy\_SMB: $t = -7.19$; Dummy\_HML: $t = -4.19$). This provides formal statistical evidence that the factor loadings have changed after 1991.
+
+\subsection{Sub-Period Analysis}
+The average absolute alpha increases from 0.0009 (original) to 0.0018 (post-publication), then declines to 0.0010 (modern). The average SMB loading declines from 0.9 to 0.5, and the HML loading declines from 0.9 to 0.6.
+
+\subsection{Cumulative Factor Returns}
+The SMB premium grows steadily until 1991, then flattens out completely. The HML premium continues to grow until 2007, but then experiences massive drawdowns. This visual evidence strongly supports the narrative of factor decay.
+
+\section{Conclusion}
+This paper replicates and extends Fama \& French (1993). I confirm that the 3-factor model successfully explains the cross-section of returns in the original sample. However, when I extend the analysis to 2025, I find that significant alphas reappear, factor loadings decline, and the model's performance deteriorates. These findings suggest that the size and value premiums have weakened over time.
+
+\begin{thebibliography}{9}
+\bibitem{fama1993} Fama, E. F., \& French, K. R. (1993). Common risk factors in the returns on stocks and bonds. \textit{Journal of Financial Economics}, 33(1), 3--56.
+\bibitem{lintner1965} Lintner, J. (1965). The valuation of risk assets and the selection of risky investments. \textit{The Review of Economics and Statistics}, 47(1), 13--37.
+\bibitem{sharpe1964} Sharpe, W. F. (1964). Capital asset prices: A theory of market equilibrium under conditions of risk. \textit{The Journal of Finance}, 19(3), 425--442.
+\end{thebibliography}
+
+\end{document}
